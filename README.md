@@ -6,12 +6,12 @@ Original App Design Project
 ## Table of Contents
 1. [Overview](#Overview)
 
-This app will let you enter your favored scenery, budget, time of the vacation, weather, preferred activity, and other variables to show you the top 10 places for your next trip.
+This app will let you chosee between different popular options for your next travel destination after your favored scenery, budget, time of the vacation, weather, preferred activity, and other variables to show you the top places for your next trip.
 
 
 3. [Product Spec](#Product-Spec)
 
-Recommend vacation places after user input.
+Recommend vacation places after user preferences.
 
 
 5. [Wireframes](#Wireframes)
@@ -32,7 +32,8 @@ Recommend vacation places after user input.
 User recommendations after logged successfully into account. Bottom navigation view.
 
 ### Description
-This app will let you enter your favored scenery, budget, time of the vacation, weather, preferred activity, and other variables to show you the top 10 places for your next trip.
+This app will let you chosee between different popular options for your next travel destination after your favored scenery, budget, time of the vacation, weather, preferred activity, and other variables to show you the top places for your next trip.
+
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
@@ -70,44 +71,105 @@ This app will let you enter your favored scenery, budget, time of the vacation, 
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+   * Username & password
+* Main Activity
+   * Show most popular travel options
+* Option 1
+   * Show top places to travel according to the user preferences
+   * Image/Youtube tour
+   * Description
+   * Rating
+* Option 2
+   * Show top places to travel according to the user preferences
+   * Image/Youtube tour
+   * Description
+   * Rating
+* Option 3
+   * Show top places to travel according to the user preferences
+   * Image/Youtube tour
+   * Description
+   * Rating
+* Option 4
+   * Show top places to travel according to the user preferences
+   * Image/Youtube tour
+   * Description
+   * Rating
+* Additional option
+   * Show top places to travel according to the user preferences
+   * Image/Youtube tour
+   * Description
+   * Rating
+* Places you have visited before
+   * Records of the user
+   * Add new
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Login
+* Main Activity
+* Selected option
+* Recommendations
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Login -> Main Activity
+* Main Activity -> Selected Option
+* Selected Option -> Access user records
 
 ## Wireframes
 
 ### [BONUS] Digital Wireframes & Mockups
 
-![vacationApp](https://user-images.githubusercontent.com/92124196/161880164-c921d3f9-ec80-48a6-986c-12322510f8a6.gif)
-
-
 ### [BONUS] Interactive Prototype
 
+![vacationApp2](https://user-images.githubusercontent.com/92124196/162827667-f79ff4f8-f304-4224-9cc5-f94a5d0d5c92.gif)
+
+
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+
+| Property| Type | Description|
+| :---: | :---: | :---: |
+| objectId | String | unque identification object |
+| title | String | title of the wireframe |
+| option # | Number | number of the option |
+| weather | String | common type of weather |
+| budget | String | preferred budget | 
+| time | Number | preferred time to travel |
+| image | File | image of the place |
+| description | String | description of the place |
+| rating | String | rating of the place|
+
+
+
 ### Networking
-- [Add list of network requests by screen ]
+- Login 
+  
+Parse.serverURL = 'https://parseapi.back4app.com'; 
+  
+Parse.initialize(
+  
+  'ID', 
+  
+  'KEY' 
+  
+);
+
+allprojects {
+  repositories {
+    ...
+    maven { url "https://jitpack.io" }
+  }
+}
+  
+dependencies {
+    ...
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+}
+
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
